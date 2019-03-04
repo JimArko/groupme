@@ -31,7 +31,7 @@ module GroupMe
     end
 
     def request(method, path, data = {})
-      res = connection.send(method, "v3/#{path}", data)
+      res = connection.send(method, "v3#{path}", data)
       if res.success? && !res.body.empty? && res.body != ' '
         res.body.response
       else
